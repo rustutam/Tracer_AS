@@ -6,7 +6,7 @@ from json import loads
 from urllib import request
 
 LEN_IP = 20
-LEN_COUNTRY = 5
+LEN_COUNTRY = 20
 LEN_AS = 10
 LEN_DIF = 60
 
@@ -32,7 +32,8 @@ def main():
             try:
                 print(str(i) + '\t' + correct_output(str(info['ip']),
                                                      LEN_IP) + '\t'
-                      + correct_output(str(info['country']).split(" ")[0],
+                      + correct_output(str(info['country']).split(" ")[0] + "/"
+                                       + info['city'],
                                        LEN_COUNTRY) +
                       '\t' + correct_output(str(info['org']).split()[0],
                                             LEN_AS) +
